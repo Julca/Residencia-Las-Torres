@@ -19,7 +19,7 @@
     
       <header>
           <div class="cabecera">
-     <img src="recursos/img/torre1.jpg" width="1210"class="img-responsive">
+              <img src="recursos/img/torre1.jpg" class="img-responsive" width="100%" id="imgcabecera">
           </div>
         <div class="titulo animated fadeInLeft col-xs-12 col-sm-12 col-md-12">
             <h1>Residencia las Torres</h1>

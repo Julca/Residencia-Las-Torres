@@ -14,8 +14,6 @@
       	<article>
           <h2 class="featurette-heading"><span class="text-muted"></span></h2>
           <p class="lead" id="lead">
-            <img src="recursos/img/logo.png" 
-                 width="70" height="50">
             El edificio es de nueva construcci&oacute;n y se inaugur&aacute; recientemente. Sus cuatro plantas son amplias y luminosas. Con hermosas vistas a la selva amaz&oacute;nica. Dispone de entrada propia cerrada al exterior, lo que proporciona la m&aacute;xima seguridad. En el interior hay un jard&iacute;n lleno de plantas ex&oacute;ticas. La residencia est&aacute; en un sitio &aacute;ptimo. Se encuentra cerca de la plaza de Morales, a tan s&oacute;lo 10 minutos de la Universidad y a 5 minutos del centro de Tarapoto. Con buenas comunicaciones a nivel de transporte p&uacute;blico y, adem&aacute;s, todo tipo de servicios y locales de diversi&oacute;n.
           </p>
         </article>

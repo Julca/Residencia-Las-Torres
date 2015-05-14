@@ -1,6 +1,10 @@
 .cabecera{
-   padding: 30px 70px 0px 70px;
+   padding: 70px 70px 0px 70px;
    margin: 0px 0px;
+  
+}
+#imgcabecera{
+    height: 250px;
 }
 .titulo{
 	color: white;
@@ -24,9 +28,10 @@
 }
 .cuerpo1{
 	background: #BEF781;
+        height:345px;
 }
 #lead{
-	font-size: 130%;
+	font-size: 161%;
         text-align: justify;
 }
 .cuerpo2{
