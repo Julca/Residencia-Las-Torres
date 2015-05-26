@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 21/05/2015 03:02:15 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="residencia.modelo.entidad.Ocupacion" table="OCUPACION" schema="LASTORRES" optimistic-lock="version">
+        <id name="idOcupacion" type="string">
+            <column name="ID_OCUPACION" length="60" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" length="40" />
+        </property>
+    </class>
+</hibernate-mapping>

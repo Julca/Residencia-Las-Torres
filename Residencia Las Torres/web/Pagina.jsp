@@ -8,9 +8,8 @@
  </style>
 <section>
 	<div class="cuerpo ">
-      <hr class="featurette-divider">
       <div class="row featurette">
-        <div class="col-xs-12 col-sm-12 col-md-6  cuerpo1">
+        <div class="col-xs-12 col-sm-6 col-md-6  cuerpo1">
       	<article>
           <h2 class="featurette-heading"><span class="text-muted"></span></h2>
           <p class="lead" id="lead">
@@ -18,7 +17,7 @@
           </p>
         </article>
         </div>
-        <div  id="myCarousel" class="carousel col-xs-12 col-sm-12 col-md-6 cuerpo2">
+        <div  id="myCarousel" class="carousel col-xs-12 col-sm-6 col-md-6 cuerpo2">
       	<ol class="carousel-indicators ">
 	    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 	    <li data-target="#myCarousel" data-slide-to="1"></li>

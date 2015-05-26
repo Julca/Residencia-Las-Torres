@@ -1,17 +1,18 @@
 .cabecera{
-   padding: 70px 70px 0px 70px;
-   margin: 0px 0px;
+        padding: 50px 70px 0px 70px;
+        margin: 0px 0px;
   
 }
 #imgcabecera{
-    height: 250px;
+        height: 250px;
 }
 .titulo{
 	color: white;
 	text-align: center;
 	margin-top: -190px;
-    font-size: 350%;
-    box-sizing: border-box;
+        font-size: 350%;
+        box-sizing: border-box;
+    
 }
 .menu{
 	margin-left: 70px;
@@ -23,7 +24,7 @@
 .cuerpo{
 	margin-left: 85px;
         margin-right: 85px;
-	margin-top: -30px;
+	margin-top:-10px;
 
 }
 .cuerpo1{
@@ -31,7 +32,7 @@
         height:345px;
 }
 #lead{
-	font-size: 161%;
+	font-size: 150%;
         text-align: justify;
 }
 .cuerpo2{
