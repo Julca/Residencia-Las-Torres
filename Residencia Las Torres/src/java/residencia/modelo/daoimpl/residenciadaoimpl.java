@@ -36,7 +36,7 @@ public Connection conectar(){
                 +persona.getDni()+"','"
                 +persona.getNcelular()+"','"
                 +persona.getGenero()+"',"
-                +"to_char(to_date('"+persona.getFechanacimiento()+"'),'dd/mm/yyyy'),'"
+                +"to_date('"+persona.getFechanacimiento()+"','yyyy-mm-dd'),'"
                 +persona.getIdubigeo()+"')"
                 ;
         try {

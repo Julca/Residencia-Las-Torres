@@ -46,57 +46,45 @@
         
         
     %>
-    <form class="form-horizontal" action="reg_persona.jsp">
-       <div class="control-group">
-    <label class="control-label" for="inputEmail">
-      Fecha de Inicio
-    </label>
-    <div class="controls">
-          <input type="date" name="inicio"value="" size="30">
-    </div>
-  </div>
-  
-  <div class="control-group">
-    <label class="control-label" for="inputEmail">
-      Fecha de Salida
-    </label>
-    <div class="controls">
-           <input type="date" name="salida"value="" size="30" >
-    </div>
-  </div>
-  <div class="control-group" >
-      <label class="control-label">Numero de Habitaci&oacute;n</label>
-                    <div class="controls">
-                        <select  class="form-control"  name="habitacion"><option>Selecciona</option> 
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6 well">
+               <form class="form-horizontal" action="reg_persona.jsp">
+                <table class="table table-condensed">
+                <tr>
+                    <td><label class="col-md-12 control-label">Fecha de Inicio</label></td>
+                    <td><input type="date" name="inicio" class="form-control" value=""></td>
+                </tr>
+                <tr>
+                    <td><label class="col-md-12 control-label">Fecha de Salida</label></td>
+                    <td><input type="date" name="salida" class="form-control" value=""></td>
+                </tr>
+                <tr>
+                    <td><label class="col-md-12 control-label">Número de Habitación</label></td>
+                    <td><select  class="form-control"  name="habitacion">
+                            <option>N° Habitación</option> 
                             <%
                                 for (Habitacion h : residenciadao.listarhabitacion()) {
                                
                             %>
-                            <option   value="<%=h.getIdHabitacion()%>"><%=h.getNumeroCuarto()%></option>
+                            <option value="<%=h.getIdHabitacion()%>"><%=h.getNumeroCuarto()%></option>
                             <%}%>
                         </select>
-                    </div>
-   </div>
-     <div class="control-group">
-    <label class="control-label" for="inputEmail">
-      Numero de personas
-    </label>
-    <div class="controls">
-           <input type="text" name="num_personas"value="" size="30" >
-    </div>
-     </div>
-     <div class="control-group">
-    <label class="control-label" for="inputEmail">
-      Precio actual
-    </label>
-    <div class="controls">
-           <input type="text" name="precio_actual"value="" size="30" >
-    </div>
-  </div>
-   <div class="control-group" >
-       <label class="control-label">Ocupaci&oacute;n</label>
-                    <div class="controls">
-                        <select  class="form-control"  name="ocupacion"><option>Selecciona</option> 
+                    </td>
+                </tr>
+                <tr>
+                    <td><label class="col-md-12 control-label">Número de Personas</label></td>
+                    <td><input type="text" name="num_personas" class="form-control" value=""></td>
+                </tr>
+                <tr>
+                    <td><label class="col-md-12 control-label">Precio actual</label></td>
+                    <td><input type="text" name="precio_actual" class="form-control" value=""></td>
+                </tr>
+                <tr>
+                    <td><label class="col-md-12 control-label">Ocupación</label></td>
+                    <td>
+                        <select  class="form-control"  name="ocupacion"><option>Ocupación</option> 
                             <%
                                 for (Ocupacion h : residenciadao.listarocupacion()) {
                                
@@ -104,12 +92,12 @@
                             <option   value="<%=h.getIdOcupacion()%>"><%=h.getNombre()%></option>
                             <%}%>
                         </select>
-                    </div>
-   </div>
-   <div class="control-group" >
-      <label class="control-label">Institucion</label>
-                    <div class="controls">
-                        <select  class="form-control"  name="institucion"><option>Selecciona</option> 
+                    </td>
+                </tr>
+                <tr>
+                    <td><label class="col-md-12 control-label">Institución</label></td>
+                    <td>
+                        <select  class="form-control"  name="institucion"><option>Intitución</option> 
                             <%
                                 for (Institucion h : residenciadao.listarinstitucion()) {
                                
@@ -117,14 +105,15 @@
                             <option   value="<%=h.getIdInstitucion()%>"><%=h.getNombre()%></option>
                             <%}%>
                         </select>
-                    </div>
-   </div>
- 
-    <div class="control-group">
-    <div class="controls" align="center">
-      <input type="submit" class="btn" value="Enviar">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center"><input type="submit" class="btn btn-success" value="Enviar"></td>
+                </tr>
+                </table> 
+               </form>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
     </div>
-  </div>
-</form>
-</div>
 <%@include file="WEB-INF/jspf/bottom.jspf"%>

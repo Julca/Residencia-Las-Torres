@@ -14,6 +14,9 @@
   background-color:lightseagreen;
 }
  </style>
+ <div align="center">
+     <h1 width="50%">Registrar Inquilino</h1>
+     <div class="container"></div>
 
     <%
         residenciadao residenciadao=new residenciadaoimpl();
@@ -84,7 +87,7 @@
       </tr>
       <tr>  
           <td><label class="col-sm-12">Fecha de Nacimiento</label></td>
-          <td><input type="text" class="form-control" name="fecha_nac" >
+          <td><input type="date" class="form-control" name="fecha_nac" >
       </tr>
 
       <tr>
