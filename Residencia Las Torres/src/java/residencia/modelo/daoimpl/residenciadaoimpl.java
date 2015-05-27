@@ -20,6 +20,7 @@ import residencia.modelo.entidad.Persona;
 import residencia.modelo.entidad.Personahospedada;
 import residencia.modelo.entidad.Provincia;
 import residencia.modelo.entidad.Region;
+import residencia.modelo.entidad.Reporte_mensual;
 import residencia.modelo.entidad.Usuario;
 import residencia.modelo.util.HibernateUtil;
 public class residenciadaoimpl implements residenciadao{
@@ -440,7 +441,44 @@ public Connection conectar(){
         }
         return estado;
     }
-}
+
+    @Override
+    public List<Reporte_mensual> listarReporte_mensual() {
+        List<Reporte_mensual>  lista=new ArrayList<Reporte_mensual>();
+        Reporte_mensual u=null;
+        Statement st=null;
+        ResultSet rs=null;
+        String query="  select p.apellidos, p.nombre, p.dni, p.n_celular, dp.fecha_inicial, dp.fecha_final from persona p, contrato c, detalle_contrato dc, pago pa, detalle_pago dp where p.id_persona = c.id_persona and c.id_contrato = dc.id_contrato and dc.id_contrato = pa.id_contrato and pa.id_pago = dp.id_pago and dp.estado ='0'";
+         try {
+            st=conectar().createStatement();
+            rs=st.executeQuery(query);
+             while (rs.next()) {
+                 u=new Reporte_mensual();
+                 u.setApellidos(rs.getString("apellidos"));
+                 u.setNombre(rs.getString("nombre"));
+                 u.setDni(rs.getString("dni"));
+                 u.setN_celular(rs.getString("n_celular"));
+                 u.setFecha_inicial(rs.getString("fecha_inicial"));
+                 u.setFecha_final(rs.getString("fecha_final"));
+                 
+                
+                 lista.add(u);
+             }
+             conectar().close();
+        } 
+         catch (Exception e) {
+            e.printStackTrace();
+             try {
+                  conectar().close(); 
+             } catch (Exception ex) {
+               
+             }
+        }
+         return lista;
+       }
+        
+          }
+
 
     
     
