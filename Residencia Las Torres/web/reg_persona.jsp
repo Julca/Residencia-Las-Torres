@@ -53,9 +53,7 @@
             response.sendRedirect("reg_persona.jsp");
             mensaje="no se inserto";
         }
-        
         }
-        
     %>
     <div class="container">
         <div class="row">
@@ -70,7 +68,7 @@
       </tr>
       <tr>
           <td><label class="col-sm-12">Apellidos</label></td>
-          <td><input type="text" class="form-control" name="apellido" >
+          <td><input type="text" class="form-control" name="apellido">
       </tr>
      <tr>
           <td><label class="col-sm-12">DNI</label></td>
@@ -105,7 +103,7 @@
           </select> 
       </td>
       <td>
-          <select class="form-control" name="pais" >
+          <select class="form-control col-xs-12" name="pais" >
                 <option>Region</option> 
                             <%
                                 for (Region p : residenciadao.listarregiones(pais)) {
@@ -117,7 +115,7 @@
           </select> 
       </td>
       <td>
-          <select class="form-control" name="pais" >
+          <select class="form-control col-xs-12" name="pais" >
                 <option>Provincia</option> 
                             <%
                                 for (Provincia p : residenciadao.listarprovincias(region)) {
@@ -129,7 +127,7 @@
           </select> 
       </td>
       <td>
-          <select class="form-control" name="pais" >
+          <select class="form-control col-xs-12" name="pais" >
                 <option>Distrito</option> 
                             <%
                                 for (Distrito p : residenciadao.listardistritos(provincia)) {
