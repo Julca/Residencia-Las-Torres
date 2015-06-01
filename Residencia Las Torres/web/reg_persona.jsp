@@ -46,7 +46,7 @@
           out.println(nombre+" "+apellidos+" "+dni+" "+genero+" "+celular+" "+fecha_nac+" "+pais+" "+distrito);
          
         if(residenciadao.registrarpersona(persona)){            
-            response.sendRedirect("contrato.jsp");
+            response.sendRedirect("reg_persona.jsp");
             mensaje="se inserto";
          
         }else{
@@ -87,11 +87,17 @@
           <td><label class="col-sm-12">Fecha de Nacimiento</label></td>
           <td><input type="date" class="form-control" name="fecha_nac" >
       </tr>
-
+    </tbody>
+        </table>
+      </form>
+                
+                
+ <form name=frmTest class="form-horizontal table-condensed" method="POST" action="reg_persona.jsp">           
+   <table class="table table-condensed">
+        <tbody>
       <tr>
         <td><label class="col-sm-12">Procedencia</label></td>
       <td>
-          <select class="form-control" name="pais" >
                 <option>Pais</option> 
                             <%
                                 for (Pais p : residenciadao.listarpais()) {
@@ -102,6 +108,7 @@
                 <%}%>
           </select> 
       </td>
+     
       <td>
           <select class="form-control col-xs-12" name="pais" >
                 <option>Region</option> 
@@ -146,8 +153,8 @@
       </tr>
     </tbody>
   </table>
-
    </form>
+   
    </div>
             <div class="col-xs-12 col-sm-3 col-md-3"></div>
   </div>
