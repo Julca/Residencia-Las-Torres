@@ -33,6 +33,15 @@ background: url(recursos/img/img10.jpg) ;
   font-size: 100%;
  
 }
+.bajar {
+   margin-top: 13%;  
+    
+}
+.Reg{
+    font-size: 200%;
+    color: white;
+    
+}
  
     </style>
 </head>
@@ -110,13 +119,18 @@ background: url(recursos/img/img10.jpg) ;
 		}
         }
    %>
-   <div class="container">
+   <div class="container bajar">
         <div class="row">
             <div class="col-xs-12 col-sm-3 col-md-3"></div>
             <div class="col-xs-12 col-sm-6 col-md-6 well well-sm">
     <form name="datos"class="form-horizontal table-condensed" method="post" action="reg_persona.jsp">
-        <table class="table table-condensed">
+        <table class="table table-condensed" align="center">
+            
     <tbody>
+        <div class="container" align="center" >
+       
+  <p class="Reg">Registrate</p>
+   </div>
       <tr>
           <td><label class="col-sm-12">Nombres</label></td>
           <td><input type="text" class="form-control" name="nombre" value="" id="textfield">
@@ -140,8 +154,8 @@ background: url(recursos/img/img10.jpg) ;
       </tr>
 
       <tr>
-          <td colspan="2">
-            <input type="submit" class="btn btn-success" name="submit" id="submit" value="Enviar">     
+          <td colspan="2" align="center">
+            <input type="submit" class="btn btn-success" name="submit" id="submit" value="Enviar">  
           </td>
       </tr>
     </tbody>
