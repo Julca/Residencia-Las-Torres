@@ -17,6 +17,7 @@ import residencia.modelo.entidad.Persona;
 import residencia.modelo.entidad.Personahospedada;
 import residencia.modelo.entidad.Provincia;
 import residencia.modelo.entidad.Region;
+import residencia.modelo.entidad.Reporte_mensual;
 import residencia.modelo.entidad.Usuario;
 
 /**
@@ -41,4 +42,5 @@ public interface residenciadao {
     public List<Mes> meses(String idpersona);
     public boolean insertardetallecontrato(String idpago,String idhabitacion,String precioactual,
     String finicio,String number1,String number2);
+    public List<Reporte_mensual> listarReporte_mensual();
 }
