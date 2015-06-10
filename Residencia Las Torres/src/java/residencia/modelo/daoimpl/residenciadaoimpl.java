@@ -9,6 +9,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import residencia.modelo.dao.residenciadao;
+import residencia.modelo.entidad.Deudaporpersona;
 import residencia.modelo.entidad.Distrito;
 import residencia.modelo.entidad.Habitacion;
 import residencia.modelo.entidad.Habitaciondisponible;
@@ -21,6 +22,7 @@ import residencia.modelo.entidad.Personahospedada;
 import residencia.modelo.entidad.Provincia;
 import residencia.modelo.entidad.Region;
 import residencia.modelo.entidad.Reporte_mensual;
+import residencia.modelo.entidad.TipoMovimiento;
 import residencia.modelo.entidad.Usuario;
 import residencia.modelo.util.HibernateUtil;
 public class residenciadaoimpl implements residenciadao{
@@ -477,7 +479,105 @@ public Connection conectar(){
          return lista;
        }
         
+    @Override
+    public boolean registrarmovimiento(String idcontrato, String idtipomovimiento, String codigobaucher,
+            String monto,
+            String glosa) {
+       boolean estado = false;
+        Statement st = null;
+        String query="begin registrar_movimiento('"+idcontrato+"','"+idtipomovimiento+"','"
+                +codigobaucher+"','"+monto+"','"
+                +glosa+"');end;"
+                ;
+        try {
+            st = conectar().createStatement();
+            st.executeUpdate(query);
+            conectar().commit(); //commit();
+            conectar().close();//cerrar la conexion
+            estado = true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            estado = false;
+            try {
+                conectar().rollback();
+                conectar().close();
+            } catch (Exception ex) {
+            }
+        }
+        return estado;
+
+}
+
+
+
+ @Override
+    public List<TipoMovimiento> listartipo_movimiento() {
+         List<TipoMovimiento> lista =null;
+        SessionFactory sf= null;
+         Session session=null;    
+         try {
+            sf=HibernateUtil.getSessionFactory();
+            session=sf.openSession();
+            lista=new ArrayList<TipoMovimiento>();
+             Query query=session.createQuery("from TipoMovimiento");
+             lista=query.list();
+             session.close();
+             
+        } catch (Exception e) {
+            e.printStackTrace();
+            session.close();
+        }
+         return lista;
+           }
+
+
+
+@Override
+    public List<Deudaporpersona> listardeuda(String dni) {
+        List<Deudaporpersona>  lista=new ArrayList<Deudaporpersona>();
+        Deudaporpersona u=null;
+        Statement st=null;
+        ResultSet rs=null;
+        String query="SELECT c.ID_CONTRATO, P.apellidos, P.NOMBRE, P.DNI, P.N_CELULAR,"
+                + "to_date(c.FECHA_INICIO,'dd-mm-yyyy') as inicio,to_char(c.FECHA_SALIDA,'dd-mm-yyyy') as salida,"
+                + "h.NUMERO_CUARTO,'S/. '||Deudor(C.ID_CONTRATO)||'.00' "
+                + "AS debe FROM CONTRATO c,PERSONA  p,DETALLE_CONTRATO dc,HABITACION h "
+                + "WHERE  p.ID_PERSONA=c.ID_INQUILINO AND c.ID_CONTRATO=dc.ID_CONTRATO "
+                + "AND dc.ID_HABITACION=h.ID_HABITACION AND c.ESTADO='1' AND p.DNI='"+dni+"'";
+         try {
+            st=conectar().createStatement();
+            rs=st.executeQuery(query);
+             while (rs.next()) {
+                 u=new Deudaporpersona();
+                 u.setIdcontrato(rs.getString("ID_CONTRATO"));
+                 u.setApellidos(rs.getString("apellidos"));
+                 u.setNombre(rs.getString("NOMBRE"));
+                 u.setDni(rs.getString("DNI"));
+                 u.setNCelular(rs.getString("N_CELULAR"));
+                 u.setFechainicio(rs.getString("inicio"));
+                 u.setFechasalida(rs.getString("salida"));
+                 u.setNumero_habitacion(rs.getString("NUMERO_CUARTO"));
+                 u.setDeuda(rs.getString("debe"));
+                 
+                
+                 lista.add(u);
+             }
+             conectar().close();
+        } 
+         catch (Exception e) {
+            e.printStackTrace();
+             try {
+                  conectar().close(); 
+             } catch (Exception ex) {
+               
+             }
+        }
+         return lista;
+       }
+
+
           }
+
 
 
     

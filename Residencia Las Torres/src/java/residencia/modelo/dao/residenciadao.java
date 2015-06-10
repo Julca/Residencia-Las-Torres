@@ -6,6 +6,7 @@
 package residencia.modelo.dao;
 
 import java.util.List;
+import residencia.modelo.entidad.Deudaporpersona;
 import residencia.modelo.entidad.Distrito;
 import residencia.modelo.entidad.Habitacion;
 import residencia.modelo.entidad.Habitaciondisponible;
@@ -18,6 +19,7 @@ import residencia.modelo.entidad.Personahospedada;
 import residencia.modelo.entidad.Provincia;
 import residencia.modelo.entidad.Region;
 import residencia.modelo.entidad.Reporte_mensual;
+import residencia.modelo.entidad.TipoMovimiento;
 import residencia.modelo.entidad.Usuario;
 
 /**
@@ -43,4 +45,8 @@ public interface residenciadao {
     public boolean insertardetallecontrato(String idpago,String idhabitacion,String precioactual,
     String finicio,String number1,String number2);
     public List<Reporte_mensual> listarReporte_mensual();
+    public boolean registrarmovimiento(String idcontrato,String idtipomovimiento,String codigobaucher,
+    String monto,String glosa );
+    public List<Deudaporpersona> listardeuda(String dni);
+    public List<TipoMovimiento> listartipo_movimiento();
 }
