@@ -27,8 +27,8 @@
       </tr>
       <tr>
         <th scope="row">3</th>
-        <td>Gissela Alexandra</td>
-        <td>Vazques</td>
+        <td>Gisela Alexandra</td>
+        <td>Vazques Salazar</td>
       </tr>
       </tbody>
   </table>
