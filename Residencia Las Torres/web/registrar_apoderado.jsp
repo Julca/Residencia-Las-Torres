@@ -1,4 +1,4 @@
-<%@page import="residencia.modelo.entidad.Persona1"%>
+<%@page import="residencia.modelo.entidad.Persona"%>
 <%@page import="residencia.modelo.entidad.Distrito"%>
 <%@page import="residencia.modelo.entidad.Provincia"%>
 <%@page import="residencia.modelo.entidad.Region"%>

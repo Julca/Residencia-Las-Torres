@@ -1,6 +1,6 @@
 <%@page import="residencia.modelo.entidad.TipoMovimiento"%>
 <%@page import="residencia.modelo.entidad.Deudaporpersona"%>
-<%@page import="residencia.modelo.entidad.Persona1"%>
+<%@page import="residencia.modelo.entidad.Persona"%>
 <%@page import="residencia.modelo.daoimpl.residenciadaoimpl"%>
 <%@page import="residencia.modelo.dao.residenciadao"%>
 <%@include file="WEB-INF/jspf/top.jspf"%>

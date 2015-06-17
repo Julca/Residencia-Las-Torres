@@ -1,4 +1,4 @@
-<%@page import="residencia.modelo.entidad.Persona1"%>
+<%@page import="residencia.modelo.entidad.Persona"%>
 <%@page import="residencia.modelo.daoimpl.residenciadaoimpl"%>
 <%@page import="residencia.modelo.dao.residenciadao"%>
 <%@include file="WEB-INF/jspf/top.jspf"%>
@@ -52,7 +52,7 @@
         idubigeo = idubigeo == null ? "" : idubigeo;
         if (buscar.equals("guardar") && !nombre.equals("") && !apellido.equals("") && !dni.equals("") && !genero.equals("") && !celular.equals("")
                 && !fecha_nac.equals("") && !idpersona.equals("")) {
-            Persona1 persona = new Persona1();
+            Persona persona = new Persona();
             persona.setApellidos(apellido);
             persona.setNombre(nombre);
             persona.setDni(dni);
@@ -67,7 +67,7 @@
         }
 
         if (!dni.equals("")) {
-            for (Persona1 u : dao.buscarpersona(dni)) {
+            for (Persona u : dao.buscarpersona(dni)) {
                 i++;
 
     %>
@@ -107,7 +107,7 @@
     if (buscar.equals("Actualizar")) {
         String dnibuscar = request.getParameter("dni");
         dnibuscar = dnibuscar == null ? "" : dnibuscar;
-        for (Persona1 pe : dao.buscarpersonasinprocedencia(dnibuscar)) {
+        for (Persona pe : dao.buscarpersonasinprocedencia(dnibuscar)) {
             nombre = pe.getNombre();
             apellido = pe.getApellidos();
             dni = pe.getDni();

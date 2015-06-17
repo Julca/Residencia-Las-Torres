@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import residencia.modelo.dao.residenciadao;
 import residencia.modelo.daoimpl.residenciadaoimpl;
-import residencia.modelo.entidad.Persona1;
+import residencia.modelo.entidad.Persona;
 
 /**
  *
@@ -52,7 +52,7 @@ public class registro extends HttpServlet {
         
         
         if(!nombre.equals("")&!apellidos.equals("")&!dni.equals("")&!genero.equals("")&!fecha_nac.equals("")){
-        Persona1 persona=new Persona1();
+        Persona persona=new Persona();
         persona.setNombre(nombre);
         persona.setApellidos(apellidos);
         persona.setDni(dni);

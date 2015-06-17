@@ -1,6 +1,6 @@
 <%@page import="residencia.modelo.entidad.Mes"%>
 <%@page import="java.util.Date"%>
-<%@page import="residencia.modelo.entidad.Persona1"%>
+<%@page import="residencia.modelo.entidad.Persona"%>
 <%@page import="residencia.modelo.entidad.Deudaporpersona"%>
 <%@page import="residencia.modelo.entidad.Personahospedada"%>
 <%@page import="residencia.modelo.daoimpl.residenciadaoimpl"%>
@@ -34,7 +34,7 @@
     idubigeo = idubigeo == null ? "" : idubigeo;
     if (buscar.equals("guardar") && !nombre.equals("") && !apellido.equals("") && !dni.equals("") && !genero.equals("") && !celular.equals("")
             && !fecha_nac.equals("") && !idpersona.equals("")) {
-        Persona1 persona = new Persona1();
+        Persona persona = new Persona();
         persona.setApellidos(apellido);
         persona.setNombre(nombre);
         persona.setDni(dni);
@@ -264,7 +264,7 @@
     if (buscar.equals("actualizar")) {
         String dnibuscar = request.getParameter("dni");
         dnibuscar = dnibuscar == null ? "" : dnibuscar;
-        for (Persona1 pe : dao.buscarpersonasinprocedencia(dnibuscar)) {
+        for (Persona pe : dao.buscarpersonasinprocedencia(dnibuscar)) {
             nombre = pe.getNombre();
             apellido = pe.getApellidos();
             dni = pe.getDni();
@@ -382,7 +382,7 @@
         <tbody>
             <%
                 int i = 0;
-                for (Persona1 u : dao.deudadeunmes(mes)) {
+                for (Persona u : dao.deudadeunmes(mes)) {
                     i++;
             %>
             <tr>

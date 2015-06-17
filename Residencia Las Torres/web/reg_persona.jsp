@@ -1,4 +1,4 @@
-<%@page import="residencia.modelo.entidad.Persona1"%>
+<%@page import="residencia.modelo.entidad.Persona"%>
 <%@page import="residencia.modelo.entidad.Distrito"%>
 <%@page import="residencia.modelo.entidad.Provincia"%>
 <%@page import="residencia.modelo.entidad.Region"%>
@@ -39,7 +39,7 @@
     String opcion = request.getParameter("opcion");
     opcion = opcion == null ? "" : opcion;
     if (!distrito.equals("") && opcion.equals("guardar")) {
-        for (Persona1 pers : residenciadao.buscarpersonasinprocedencia(dni)) {
+        for (Persona pers : residenciadao.buscarpersonasinprocedencia(dni)) {
             idpersona = pers.getIdPersona();
             nombre = pers.getNombre();
             apellidos = pers.getApellidos();
@@ -47,7 +47,7 @@
             fecha_nac = pers.getFechaNacimiento();
         }
 
-        Persona1 persona1 = new Persona1();
+        Persona persona1 = new Persona();
         persona1.setIdPersona(idpersona);
         persona1.setNombre(nombre);
         persona1.setApellidos(apellidos);

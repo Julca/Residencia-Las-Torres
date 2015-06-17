@@ -13,7 +13,7 @@ import residencia.modelo.daoimpl.residenciadaoimpl;
 import residencia.modelo.entidad.Distrito;
 import residencia.modelo.entidad.Habitaciondisponible;
 import residencia.modelo.entidad.Pais;
-import residencia.modelo.entidad.Persona1;
+import residencia.modelo.entidad.Persona;
 import residencia.modelo.entidad.Personahospedada;
 import residencia.modelo.entidad.Provincia;
 import residencia.modelo.entidad.Region;
@@ -40,7 +40,7 @@ public class consola {
     }
     public void insertarpersona(){
         residenciadao residenciadao=new residenciadaoimpl();
-        Persona1 persona=new Persona1();
+        Persona persona=new Persona();
         persona.setNombre("uli");
         persona.setApellidos("julca");
         persona.setDni("55555555");
@@ -109,7 +109,7 @@ public class consola {
     }
        public void buscarpersona(){
             residenciadao residenciadao=new residenciadaoimpl();
-           for (Persona1 persona : residenciadao.buscarpersona("23456789")) {
+           for (Persona persona : residenciadao.buscarpersona("23456789")) {
            
                 System.out.println(" "+persona.getIdPersona()+" "+persona.getDni()+""+persona.getApellidos()+" "+persona.getNombre()+" "+persona.getNCelular()+" "+persona.getFechaNacimiento());
            }
@@ -124,7 +124,7 @@ public class consola {
        }
         public void actualizarpersona(){
           residenciadao residenciadao=new residenciadaoimpl();
-           Persona1 persona=new Persona1();
+           Persona persona=new Persona();
            persona.setApellidos("Julca Ramirez");
            persona.setNombre("Noe");
            persona.setDni("47589900");

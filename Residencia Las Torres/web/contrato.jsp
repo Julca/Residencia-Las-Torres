@@ -1,5 +1,5 @@
 <%@page import="java.util.List"%>
-<%@page import="residencia.modelo.entidad.Persona1"%>
+<%@page import="residencia.modelo.entidad.Persona"%>
 <%@page import="residencia.modelo.entidad.Distrito"%>
 <%@page import="residencia.modelo.entidad.Provincia"%>
 <%@page import="residencia.modelo.entidad.Region"%>
@@ -18,7 +18,7 @@
     }
 </style>
 <%  residenciadao residenciadao = new residenciadaoimpl();
-    Persona1 persona = new Persona1();
+    Persona persona = new Persona();
     Mes m = new Mes();
     int cantidad;
     String mensaje = "No se encuentra registrado(a): <a href='reg_persona.jsp'>Registrar</a>  ";
@@ -77,14 +77,14 @@
     String idapoderado = request.getParameter("idapoderado");
     idapoderado = idapoderado == null ? "" : idapoderado;
     if (!distritoa.equals("") && opcion.equals("guardar")) {
-        for (Persona1 pers : residenciadao.buscarpersonasinprocedencia(dnia)) {
+        for (Persona pers : residenciadao.buscarpersonasinprocedencia(dnia)) {
             idapoderado = pers.getIdPersona();
             nombre = pers.getNombre();
             apellidos = pers.getApellidos();
             celular = pers.getNCelular();
             fecha_nac = pers.getFechaNacimiento();
         }
-        Persona1 persona1 = new Persona1();
+        Persona persona1 = new Persona();
         persona1.setIdPersona(idapoderado);
         persona1.setNombre(nombre);
         persona1.setApellidos(apellidos);
@@ -116,8 +116,8 @@
     </div>
 </div><%
     if (!buscardni.equals("")) {
-        for (Persona1 u : residenciadao.buscarpersona(buscardni)) {
-            List<Persona1> lista = residenciadao.buscarpersona(buscardni);
+        for (Persona u : residenciadao.buscarpersona(buscardni)) {
+            List<Persona> lista = residenciadao.buscarpersona(buscardni);
             nombre = u.getNombre();
             apellidos = u.getApellidos();
             dni = u.getDni();
@@ -129,7 +129,7 @@
             pais = u.getPais();
             idpersona = u.getIdPersona();
         }
-        for (Persona1 u : residenciadao.buscarpersonasinprocedencia(buscardni)) {
+        for (Persona u : residenciadao.buscarpersonasinprocedencia(buscardni)) {
             nombre = u.getNombre();
             apellidos = u.getApellidos();
             dni = u.getDni();
@@ -241,7 +241,7 @@
                         </tr>
                         <%
                             if (!buscardniapo.equals("")) {
-                                for (Persona1 u : residenciadao.buscarpersona(buscardniapo)) {
+                                for (Persona u : residenciadao.buscarpersona(buscardniapo)) {
                                     idapoderado = u.getIdPersona();
                                     nombreapoderado = u.getNombre();
                                     apellidoapoderado = u.getApellidos();

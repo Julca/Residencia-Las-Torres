@@ -21,7 +21,7 @@ import residencia.modelo.entidad.Institucion;
 import residencia.modelo.entidad.Mes;
 import residencia.modelo.entidad.Ocupacion;
 import residencia.modelo.entidad.Pais;
-import residencia.modelo.entidad.Persona1;
+import residencia.modelo.entidad.Persona;
 import residencia.modelo.entidad.Personahospedada;
 import residencia.modelo.entidad.Provincia;
 import residencia.modelo.entidad.Region;
@@ -34,7 +34,7 @@ public Connection conectar(){
     return coneccion.coneccion.conectar();
 }
     @Override
-    public boolean registrarpersona(Persona1 persona) {
+    public boolean registrarpersona(Persona persona) {
     boolean estado = false;
         Statement st = null;
         String query="insert into PERSONA  values ('','"
@@ -299,9 +299,9 @@ public Connection conectar(){
          return lista;
            }
     @Override
-    public List<Persona1> buscarpersona(String dni) {
-       List<Persona1> lista=new ArrayList<Persona1>();
-        Persona1 u=null;
+    public List<Persona> buscarpersona(String dni) {
+       List<Persona> lista=new ArrayList<Persona>();
+        Persona u=null;
         Statement st=null;
         ResultSet rs=null;
         String query="SELECT p.id_persona,p.apellidos,p.nombre,p.dni,p.N_CELULAR,"
@@ -314,7 +314,7 @@ public Connection conectar(){
             st=conectar().createStatement();
             rs=st.executeQuery(query);
              while (rs.next()) {
-                 u=new Persona1();
+                 u=new Persona();
                  u.setIdPersona(rs.getString("id_persona"));
                  u.setApellidos(rs.getString("apellidos"));
                  u.setNombre(rs.getString("nombre"));
@@ -504,7 +504,7 @@ public Connection conectar(){
    
    
     @Override
-    public boolean actualizarpersona(Persona1 persona) {
+    public boolean actualizarpersona(Persona persona) {
           boolean estado=true;
         Statement st=null;
         String query="UPDATE PERSONA SET nombre='"+persona.getNombre()+"',apellidos='"+persona.getApellidos()+"', "
@@ -755,9 +755,9 @@ public Connection conectar(){
 
 
 @Override
-    public List<Persona1> buscarpersonasinprocedencia(String dni) {
-         List<Persona1> lista=new ArrayList<Persona1>();
-        Persona1 u=null;
+    public List<Persona> buscarpersonasinprocedencia(String dni) {
+         List<Persona> lista=new ArrayList<Persona>();
+        Persona u=null;
         Statement st=null;
         ResultSet rs=null;
         String query="SELECT id_persona,apellidos,nombre,dni,N_CELULAR,genero,id_ubigeo,"
@@ -767,7 +767,7 @@ public Connection conectar(){
             st=conectar().createStatement();
             rs=st.executeQuery(query);
              while (rs.next()) {
-                 u=new Persona1();
+                 u=new Persona();
                  u.setIdPersona(rs.getString("id_persona"));
                  u.setApellidos(rs.getString("apellidos"));
                  u.setNombre(rs.getString("nombre"));
@@ -793,9 +793,9 @@ public Connection conectar(){
     
 
     @Override
-    public List<Persona1> deudadeunmes(String fecha) {
-         List<Persona1> lista=new ArrayList<Persona1>();
-        Persona1 u=null;
+    public List<Persona> deudadeunmes(String fecha) {
+         List<Persona> lista=new ArrayList<Persona>();
+        Persona u=null;
         Statement st=null;
         ResultSet rs=null;
         String query="SELECT p.apellidos,p.nombre ,p.dni,p.n_celular,h.numero_cuarto,deudadeunmes(DNI,to_date('"+fecha+"','dd/mm/yyyy'))AS debe"
@@ -806,7 +806,7 @@ public Connection conectar(){
             st=conectar().createStatement();
             rs=st.executeQuery(query);
              while (rs.next()) {
-                 u=new Persona1();
+                 u=new Persona();
                  u.setApellidos(rs.getString("apellidos"));
                  u.setNombre(rs.getString("nombre"));
                  u.setDni(rs.getString("dni"));

@@ -9,7 +9,7 @@ package residencia.modelo.entidad;
  *
  * @author ulises
  */
-public class Persona1 {
+public class Persona {
      private String idPersona;
      private String idubigeo;
      private String nombre;
@@ -26,7 +26,7 @@ public class Persona1 {
      private String habitacion;
      private String deuda;
 
-    public Persona1() {
+    public Persona() {
     }
 
     public String getDeuda() {

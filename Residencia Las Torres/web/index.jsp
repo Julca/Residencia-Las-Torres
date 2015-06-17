@@ -2,7 +2,7 @@
 <%@page import="residencia.modelo.entidad.Distrito"%>
 <%@page import="residencia.modelo.entidad.Provincia"%>
 <%@page import="residencia.modelo.entidad.Region"%>
-<%@page import="residencia.modelo.entidad.Persona1"%>
+<%@page import="residencia.modelo.entidad.Persona"%>
 <%@page import="java.util.List"%>
 <%@page import="residencia.modelo.entidad.Usuario"%>
 <%@page import="residencia.modelo.daoimpl.residenciadaoimpl"%>
@@ -73,7 +73,7 @@ h1{
   </div>
 </div>
    <%
-   Persona1 persona=new Persona1();
+   Persona persona=new Persona();
    Usuario us=new Usuario();
    
         String opcion=request.getParameter("opcion");opcion=opcion==null?"": opcion;
