@@ -9,11 +9,11 @@
  </style>
 
        <form class="form-horizontal" action="busqueda.jsp">
-  <div class="control-group"align="center">
+  <div class="control-group" align="center">
     <label class="control-label" for="inputEmail">DNI
     </label>
-    <div class="controls "align="center">
-      <input type="text" name="dni" value="" id="inputEmail"size="30" placeholder="dni">
+    <div class="controls " align="center">
+      <input type="text" name="dni" value="" id="inputEmail" size="30" placeholder="dni">
     </div>
   </div>
    <div class="control-group">

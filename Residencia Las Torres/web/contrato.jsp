@@ -66,7 +66,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-3 col-md-3"></div>
             <div class="col-xs-12 col-sm-6 col-md-6 well well-sm">
-    <form name="datos"class="form-horizontal table-condensed" method="post" action="contrato.jsp">
+    <form name="datos" class="form-horizontal table-condensed" method="post" action="contrato.jsp">
         <table class="table table-condensed">
     <tbody>
     <tr>
@@ -90,7 +90,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-3 col-md-3"></div>
             <div class="col-xs-12 col-sm-6 col-md-6 well well-sm">
-    <form name="datos"class="form-horizontal table-condensed" method="post" action="reg_persona.jsp">
+    <form name="datos" class="form-horizontal table-condensed" method="post" action="reg_persona.jsp">
         
         <table class="table table-condensed">
     <tbody>
@@ -205,7 +205,7 @@
                                
                             %>
                             <option value="<%=h.getIdHabitacion()%>"><%=h.getNumeroCuarto()%></option>
-                            <%}%>
+                          
                         </select>
                     </td>
                 </tr>
@@ -226,7 +226,7 @@
                                
                             %>
                             <option   value="<%=h.getIdOcupacion()%>"><%=h.getNombre()%></option>
-                            <%}%>
+                           
                         </select>
                     </td>
                 </tr>
@@ -235,11 +235,12 @@
                     <td>
                         <select  class="form-control"  name="institucion"><option>Intitución</option> 
                             <%
-                                for (Institucion h : residenciadao.listarinstitucion()) {
+                            
+                            for (Institucion h : residenciadao.listarinstitucion()){
                                
                             %>
                             <option   value="<%=h.getIdInstitucion()%>"><%=h.getNombre()%></option>
-                            <%}%>
+                         
                         </select>
                     </td>
                 </tr>

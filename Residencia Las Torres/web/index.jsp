@@ -123,43 +123,8 @@ background: url(recursos/img/img10.jpg) ;
         <div class="row">
             <div class="col-xs-12 col-sm-3 col-md-3"></div>
             <div class="col-xs-12 col-sm-6 col-md-6 well well-sm">
-    <form name="datos"class="form-horizontal table-condensed" method="post" action="reg_persona.jsp">
-        <table class="table table-condensed" align="center">
-            
-    <tbody>
-        <div class="container" align="center" >
-       
-  <p class="Reg">Registrate</p>
-   </div>
-      <tr>
-          <td><label class="col-sm-12">Nombres</label></td>
-          <td><input type="text" class="form-control" name="nombre" value="" id="textfield">
-      </tr>
-      <tr>
-          <td><label class="col-sm-12">Apellidos</label></td>
-          <td><input type="text" class="form-control" name="nombre" value="" id="textfield">
-      </tr>
-     <tr>
-          <td><label class="col-sm-12">DNI</label></td>
-          <td><input type="text" class="form-control" name="nombre" value="" id="textfield">
-     </tr>
-     <tr>
-        <td><label class="col-sm-12">Genero</label></td>
-        <td><input type="radio" class="form-inline" name="genero" id="radio" value="F">Femenino
-            <input type="radio" class="form-inline" name="genero" id="radio" value="M">Maculino</td>
-      </tr>
-      <tr>  
-          <td><label class="col-sm-12">Fecha de Nacimiento</label></td>
-          <td><input type="date" class="form-control" name="fecha_nac" value=""id="date"></td>
-      </tr>
-
-      <tr>
-          <td colspan="2" align="center">
-            <input type="submit" class="btn btn-success" name="submit" id="submit" value="Enviar">  
-          </td>
-      </tr>
-    </tbody>
-  </table>
+    <form name="datos" class="form-horizontal table-condensed" method="post" action="reg_persona.jsp">
+        
 
    </form>
    </div>
