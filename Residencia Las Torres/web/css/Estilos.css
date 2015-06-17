@@ -29,25 +29,26 @@
 }
 .cuerpo1{
 	background: #BEF781;
-        height:345px;
+        height:390px;
 }
 #lead{
-	font-size: 150%;
+	font-size: 170%;
         text-align: justify;
 }
 .cuerpo2{
+        
 	background: white;
-	width: 500px;
-	height:345px;
+      
 }
 .slide, .item{
-	width: 590px;
-	height:282px;
 	margin: 20px auto;
+}
+#img{
+     height: 350px;
 }
 
 .carousel-control{
-height: 346px;
+height: 390px;
 }
 .piecera{
     margin:22px;

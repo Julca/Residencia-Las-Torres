@@ -3,7 +3,6 @@
 	<style type="text/css">
   body {
   background-color: orange;
-  
 }
  </style>
 <section>
@@ -35,32 +34,30 @@
 	  <!-- Carousel items -->
 	  <div class="carousel-inner ">
               
-              <div class="active item"><img src="recursos/img/img1.jpg" ></div>
-	    <div class="item"><img src="recursos/img/img2.jpg " ><div class="carousel-caption">
+              <div class="active item"><img width="90%" id="img" src="recursos/img/img1.JPG"class="img-responsive" ></div>
+	    <div class="item"><img  width="90%"id="img" src="recursos/img/img2.JPG " class="img-responsive"><div class="carousel-caption">
       </div></div>
-	    <div class="item"><img src="recursos/img/img3.jpg" ><div class="carousel-caption">
+	    <div class="item"><img width="90%"id="img"src="recursos/img/img3.JPG"class="img-responsive" ><div class="carousel-caption">
       </div></div>
-	    <div class="item"><img src="recursos/img/img4.jpg" ><div class="carousel-caption">
+	    <div class="item"><img width="90%"id="img"src="recursos/img/img4.jpg" class="img-responsive"><div class="carousel-caption">
       </div></div>
-	    <div class="item"><img src="recursos/img/img5.jpg" ><div class="carousel-caption">
+	    <div class="item"><img width="90%"id="img" src="recursos/img/img5.JPG" class="img-responsive"><div class="carousel-caption">
       </div></div>
-	    <div class="item"><img src="recursos/img/img6.jpg" ><div class="carousel-caption">
+	    <div class="item"><img width="90%"id="img" src="recursos/img/img6.JPG"class="img-responsive" ><div class="carousel-caption">
       </div></div>
-	    <div class="item"><img src="recursos/img/img7.jpg" ><div class="carousel-caption">
+	    <div class="item"><img width="90%"id="img"src="recursos/img/img7.JPG" class="img-responsive"><div class="carousel-caption">
       </div></div>
-	    <div class="item"><img src="recursos/img/img8.jpg" ><div class="carousel-caption">
+	    <div class="item"><img width="90%"id="img"src="recursos/img/img8.JPG"class="img-responsive" ><div class="carousel-caption">
       </div></div>
-	    <div class="item"><img src="recursos/img/img9.jpg" ><div class="carousel-caption">
+	    <div class="item"><img width="90%" id="img"src="recursos/img/img9.JPG" class="img-responsive"><div class="carousel-caption">
       </div></div>
-	    <div class="item"><img src="recursos/img/img10.jpg" ><div class="carousel-caption">
+	    <div class="item"><img width="90%"id="img"src="recursos/img/img10.jpg"class="img-responsive" ><div class="carousel-caption">
       </div></div>
-	    <div class="item"><img src="recursos/img/img11.jpg" ><div class="carousel-caption">
+	    <div class="item"><img width="90%"id="img"src="recursos/img/img11.JPG"class="img-responsive" ><div class="carousel-caption">
       </div></div>
-	    <div class="item"><img src="recursos/img/img12.jpg"><div class="carousel-caption">
-      </div></div>
-	    
+	    <div class="item"><img width="90%"id="img"src="recursos/img/img12.JPG"class="img-responsive"><div class="carousel-caption">
+      </div></div>    
   </div>
-    
   <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
   <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
       </div>

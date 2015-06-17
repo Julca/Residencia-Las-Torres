@@ -7,11 +7,9 @@
     <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:orcl</property>
     <property name="hibernate.connection.username">lastorres</property>
     <property name="hibernate.connection.password">lastorres</property>
-    <mapping resource="residencia/modelo/pojos/Ocupacion.hbm.xml"/>
-    <mapping resource="residencia/modelo/pojos/Institucion.hbm.xml"/>
     <mapping resource="residencia/modelo/pojos/Habitacion.hbm.xml"/>
-    <mapping resource="residencia/modelo/pojos/Observacion.hbm.xml"/>
-    <mapping resource="residencia/modelo/pojos/CobroExtra.hbm.xml"/>
+    <mapping resource="residencia/modelo/pojos/Institucion.hbm.xml"/>
     <mapping resource="residencia/modelo/pojos/TipoMovimiento.hbm.xml"/>
+    <mapping resource="residencia/modelo/pojos/Ocupacion.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

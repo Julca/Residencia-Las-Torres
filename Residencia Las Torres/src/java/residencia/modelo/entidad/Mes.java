@@ -12,8 +12,17 @@ package residencia.modelo.entidad;
 public class Mes {
     private String cantidad;
     private String finicio;
+    private String nombre;
 
     public Mes() {
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getFinicio() {

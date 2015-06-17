@@ -1,5 +1,5 @@
 package residencia.modelo.entidad;
-// Generated 21/05/2015 03:02:14 PM by Hibernate Tools 4.3.1
+// Generated 05/06/2015 07:56:20 AM by Hibernate Tools 4.3.1
 
 
 

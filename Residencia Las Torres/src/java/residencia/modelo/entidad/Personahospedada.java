@@ -14,8 +14,26 @@ public class Personahospedada {
     private String apellidos;
     private String ncelular;
     private String habitacion;
+    private String idpersona;
+    private String dni;
 
     public Personahospedada() {
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public String getIdpersona() {
+        return idpersona;
+    }
+
+    public void setIdpersona(String idpersona) {
+        this.idpersona = idpersona;
     }
 
     public String getNombre() {
