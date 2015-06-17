@@ -40,8 +40,8 @@ public class cerrar extends HttpServlet {
          session.removeAttribute("dnia");
          session.removeAttribute("idapoderado");
          request.getRequestDispatcher("index.jsp").forward(request, response);
-
-      //  response.setContentType("text/html;charset=UTF-8");
+//
+//        response.setContentType("text/html;charset=UTF-8");
 //        PrintWriter out = response.getWriter();
 //        try {
 //            /* TODO output your page here. You may use following sample code. */
@@ -60,7 +60,7 @@ public class cerrar extends HttpServlet {
      
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+//     <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *

@@ -48,11 +48,19 @@ public interface residenciadao {
     String finicio,String number1,String number2);
     
     public List<Reporte_mensual> listarReporte_mensual();
+    public List<Deudaporpersona> listardeuda(String dni);
+    public List<TipoMovimiento> listartipo_movimiento();
+    public boolean registrarmovimiento(String idcontrato,String idtipomovimiento,String codigobaucher,
+    String monto,String glosa );
     
-    
-    
+    public List<Deudaporpersona> deudadelinquilino();
+    public List<Deudaporpersona> elmasdudor();
+    public List<Deudaporpersona> elmenosdeudor();
+    public List<Persona1> buscarpersonasinprocedencia(String dni);
+
     public List<Persona1> deudadeunmes(String fecha);
     public List<Mes>  nombremes(String fecha);
     public boolean  registrarusuario(Usuario usuario);
     public String  dniexistente(String dni);
 }
+

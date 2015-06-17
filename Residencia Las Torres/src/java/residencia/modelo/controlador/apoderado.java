@@ -11,10 +11,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import residencia.modelo.dao.residenciadao;
-import residencia.modelo.daoimpl.residenciadaoimpl;
-import residencia.modelo.entidad.Persona1;
 
 /**
  *
@@ -33,71 +29,22 @@ public class apoderado extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-                residenciadao residenciadao=new residenciadaoimpl();
         response.setContentType("text/html;charset=UTF-8");
-        HttpSession session=request.getSession();
-        String dni=request.getParameter("dni");dni=dni==null?"": dni;
-
-         if(!dni.equals("")){      
-          session.setAttribute("dni", dni);
-          request.getRequestDispatcher("registrar_apoderado.jsp").forward(request, response); 
+        PrintWriter out = response.getWriter();
+        try {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet apoderado</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet apoderado at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        } finally {
+            out.close();
         }
-        String idapoderado=request.getParameter("nombrea");idapoderado=idapoderado==null?"":idapoderado;
-        String nombre=request.getParameter("nombrea");nombre=nombre==null?"":nombre;
-        String apellidos=request.getParameter("apellidoa");apellidos=apellidos==null?"": apellidos;
-        String dnia=request.getParameter("dnia");dnia=dnia==null?"": dnia;
-        String genero=request.getParameter("generoa");genero=genero==null?"": genero;
-        String celular=request.getParameter("celulara");celular=celular==null?"": celular;
-        String fecha_nac=request.getParameter("fecha_naca");fecha_nac=fecha_nac==null?"": fecha_nac;
-        if(!nombre.equals("")&!apellidos.equals("")&!dnia.equals("")&!genero.equals("")&!fecha_nac.equals("")){
-        Persona1 persona=new Persona1();
-        persona.setNombre(nombre);
-        persona.setApellidos(apellidos);
-        persona.setDni(dnia);
-        persona.setGenero(genero);
-        persona.setNCelular(celular);
-        persona.setFechaNacimiento(fecha_nac);
-        persona.setIdubigeo("");
-        if(residenciadao.registrarpersona(persona)){
-        for(Persona1 pers:residenciadao.buscarpersonasinprocedencia(dnia)){
-         idapoderado=pers.getIdPersona();
-         }
-         session.setAttribute("dnia", dnia);
-         session.setAttribute("idapoderado", idapoderado);  
-         request.getRequestDispatcher("registrar_apoderado.jsp").forward(request, response); 
-        }else{
-         session.setAttribute("mensaje", "No se pudo registrar, ingrese nuevamente");     
-         request.getRequestDispatcher("registrar_apoderado.jsp").forward(request, response); 
-        }
-        }
-        
-        String regiona=request.getParameter("regiona");regiona=regiona==null?"": regiona;
-
-        if(!regiona.equals("")){
-          session.setAttribute("regiona", regiona);
-          request.getRequestDispatcher("registrar_apoderado.jsp").forward(request, response);
-        }
-        String distrito=request.getParameter("distritoa");distrito=distrito==null?"": distrito;
-        if(!distrito.equals("")){
-          session.setAttribute("distritoa", distrito);
-          request.getRequestDispatcher("registrar_apoderado.jsp").forward(request, response);
-        }
-//        response.setContentType("text/html;charset=UTF-8");
-//        PrintWriter out = response.getWriter();
-//        try {
-//            /* TODO output your page here. You may use following sample code. */
-//            out.println("<!DOCTYPE html>");
-//            out.println("<html>");
-//            out.println("<head>");
-//            out.println("<title>Servlet apoderado</title>");            
-//            out.println("</head>");
-//            out.println("<body>");
-//            out.println("<h1>Servlet apoderado at " + request.getContextPath() + "</h1>");
-//            out.println("</body>");
-//            out.println("</html>");
-//        } finally {
-//            out.close();
-//        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
