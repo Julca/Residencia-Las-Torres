@@ -509,8 +509,7 @@ public Connection conectar(){
 }
 
 
-
- @Override
+@Override
     public List<TipoMovimiento> listartipo_movimiento() {
          List<TipoMovimiento> lista =null;
         SessionFactory sf= null;
@@ -531,8 +530,7 @@ public Connection conectar(){
            }
 
 
-
-@Override
+ @Override
     public List<Deudaporpersona> listardeuda(String dni) {
         List<Deudaporpersona>  lista=new ArrayList<Deudaporpersona>();
         Deudaporpersona u=null;
@@ -573,13 +571,8 @@ public Connection conectar(){
              }
         }
          return lista;
-       }
+         
+    }
+}
 
-
-          }
-
-
-
-    
-    
-
+       
