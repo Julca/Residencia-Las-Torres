@@ -13,7 +13,7 @@ import residencia.modelo.entidad.Institucion;
 import residencia.modelo.entidad.Mes;
 import residencia.modelo.entidad.Ocupacion;
 import residencia.modelo.entidad.Pais;
-import residencia.modelo.entidad.Persona;
+import residencia.modelo.entidad.Persona1;
 import residencia.modelo.entidad.Personahospedada;
 import residencia.modelo.entidad.Provincia;
 import residencia.modelo.entidad.Region;
@@ -31,8 +31,8 @@ public interface residenciadao {
     public List<Provincia> listarprovincias(String id_region);
     public List<Distrito> listardistritos(String id_provincia);
     public List<Habitaciondisponible> listarhabitacionesdisponibles();
-    public List<Persona> buscarpersona(String dni);
-    public boolean registrarpersona(Persona persona);
+    public List<Persona1> buscarpersona(String dni);
+    public boolean registrarpersona(Persona1 persona);
     public List<Personahospedada> listarpersonashospedadas();
     public List<Habitacion> listarhabitacion();
     public List<Ocupacion> listarocupacion();
@@ -43,4 +43,8 @@ public interface residenciadao {
     public boolean insertardetallecontrato(String idpago,String idhabitacion,String precioactual,
     String finicio,String number1,String number2);
     public List<Reporte_mensual> listarReporte_mensual();
+    public List<Deudaporpersona> deudadelinquilino();
+    public List<Deudaporpersona> elmasdudor();
+    public List<Deudaporpersona> elmenosdeudor();
+    public List<Persona1> buscarpersonasinprocedencia(String dni);
 }

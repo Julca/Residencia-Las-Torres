@@ -16,7 +16,7 @@ import residencia.modelo.entidad.Institucion;
 import residencia.modelo.entidad.Mes;
 import residencia.modelo.entidad.Ocupacion;
 import residencia.modelo.entidad.Pais;
-import residencia.modelo.entidad.Persona;
+import residencia.modelo.entidad.Persona1;
 import residencia.modelo.entidad.Personahospedada;
 import residencia.modelo.entidad.Provincia;
 import residencia.modelo.entidad.Region;
@@ -28,7 +28,7 @@ public Connection conectar(){
     return coneccion.coneccion.conectar();
 }
     @Override
-    public boolean registrarpersona(Persona persona) {
+    public boolean registrarpersona(Persona1 persona) {
     boolean estado = false;
         Statement st = null;
         String query="insert into PERSONA  values ('','"
@@ -462,6 +462,171 @@ public Connection conectar(){
                  u.setFecha_final(rs.getString("fecha_final"));
                  
                 
+                 lista.add(u);
+             }
+             conectar().close();
+        } 
+         catch (Exception e) {
+            e.printStackTrace();
+             try {
+                  conectar().close(); 
+             } catch (Exception ex) {
+               
+             }
+        }
+         return lista;
+       }
+     @Override
+    public List<Deudaporpersona> deudadelinquilino() {
+       List<Deudaporpersona>  lista=new ArrayList<Deudaporpersona>();
+        Deudaporpersona u=null;
+        Statement st=null;
+        ResultSet rs=null;
+        String query=" SELECT c.ID_CONTRATO, P.apellidos, P.NOMBRE, P.DNI, P.N_CELULAR,"
+                + "to_char(c.FECHA_INICIO,'dd-mm-yyyy') as inicio,to_char(c.FECHA_SALIDA,'dd-mm-yyyy') AS salida,h.NUMERO_CUARTO,'S/. '||Deudor(C.ID_CONTRATO)||'.00' "
+                + "AS debe FROM CONTRATO c,PERSONA  p,DETALLE_CONTRATO dc,HABITACION h "
+                + "WHERE  p.ID_PERSONA=c.ID_INQUILINO AND c.ID_CONTRATO=dc.ID_CONTRATO "
+                + "AND dc.ID_HABITACION=h.ID_HABITACION AND c.ESTADO='1'";
+         try {
+            st=conectar().createStatement();
+            rs=st.executeQuery(query);
+             while (rs.next()) {
+                 u=new Deudaporpersona();
+                 u.setIdcontrato(rs.getString("ID_CONTRATO"));
+                 u.setApellidos(rs.getString("apellidos"));
+                 u.setNombre(rs.getString("NOMBRE"));
+                 u.setDni(rs.getString("DNI"));
+                 u.setNCelular(rs.getString("N_CELULAR"));
+                 u.setFechainicio(rs.getString("inicio"));
+                 u.setFechasalida(rs.getString("salida"));
+                 u.setNumero_habitacion(rs.getString("NUMERO_CUARTO"));
+                 u.setDeuda(rs.getString("debe"));
+                 
+                
+                 lista.add(u);
+             }
+             conectar().close();
+        } 
+         catch (Exception e) {
+            e.printStackTrace();
+             try {
+                  conectar().close(); 
+             } catch (Exception ex) {
+               
+             }
+        }
+         return lista;
+       }
+
+@Override
+    public List<Deudaporpersona> elmasdudor() {
+        List<Deudaporpersona>  lista=new ArrayList<Deudaporpersona>();
+        Deudaporpersona u=null;
+        Statement st=null;
+        ResultSet rs=null;
+        String query=" SELECT c.ID_CONTRATO, P.apellidos, P.NOMBRE, P.DNI, P.N_CELULAR,to_char(c.FECHA_INICIO,'dd-mm-yyyy') as inicio,"
+                + "to_char(c.FECHA_SALIDA,'dd-mm-yyyy') as salida,h.NUMERO_CUARTO,'S/. '||Deudor(C.ID_CONTRATO)||'.00' AS debe FROM "
+                + "CONTRATO c,PERSONA  p,DETALLE_CONTRATO dc,HABITACION h "
+                + "WHERE  p.ID_PERSONA=c.ID_INQUILINO AND c.ID_CONTRATO=dc.ID_CONTRATO"
+                + " AND dc.ID_HABITACION=h.ID_HABITACION AND c.ESTADO='1'"
+                + " AND Deudor(C.ID_CONTRATO)IN(SELECT MAX(Deudor( ID_CONTRATO)) FROM CONTRATO ) ";
+         try {
+            st=conectar().createStatement();
+            rs=st.executeQuery(query);
+             while (rs.next()) {
+                 u=new Deudaporpersona();
+                 u.setIdcontrato(rs.getString("ID_CONTRATO"));
+                 u.setApellidos(rs.getString("apellidos"));
+                 u.setNombre(rs.getString("NOMBRE"));
+                 u.setDni(rs.getString("DNI"));
+                 u.setNCelular(rs.getString("N_CELULAR"));
+                 u.setFechainicio(rs.getString("inicio"));
+                 u.setFechasalida(rs.getString("salida"));
+                 u.setNumero_habitacion(rs.getString("NUMERO_CUARTO"));
+                 u.setDeuda(rs.getString("debe"));
+                 lista.add(u);
+             }
+             conectar().close();
+        } 
+         catch (Exception e) {
+            e.printStackTrace();
+             try {
+                  conectar().close(); 
+             } catch (Exception ex) {
+               
+             }
+        }
+         return lista;
+       }
+
+
+
+
+@Override
+    public List<Deudaporpersona> elmenosdeudor() {
+      List<Deudaporpersona>  lista=new ArrayList<Deudaporpersona>();
+        Deudaporpersona u=null;
+        Statement st=null;
+        ResultSet rs=null;
+        String query="SELECT c.ID_CONTRATO, P.apellidos, P.NOMBRE, P.DNI, P.N_CELULAR,to_char(c.FECHA_INICIO,'dd-mm-yyyy') as inicio,"
+                + "to_char(c.FECHA_SALIDA,'dd-mm-yyyy') as salida,h.NUMERO_CUARTO,'S/. '||Deudor(C.ID_CONTRATO)||'.00'"
+                + " AS debe "
+                + "FROM CONTRATO c,PERSONA  p,DETALLE_CONTRATO dc,HABITACION h "
+                + "WHERE  p.ID_PERSONA=c.ID_INQUILINO AND c.ID_CONTRATO=dc.ID_CONTRATO "
+                + "AND dc.ID_HABITACION=h.ID_HABITACION AND c.ESTADO='1' "
+                + "AND Deudor(C.ID_CONTRATO)IN(SELECT min(Deudor( ID_CONTRATO)) FROM CONTRATO ) ";
+         try {
+            st=conectar().createStatement();
+            rs=st.executeQuery(query);
+             while (rs.next()) {
+                 u=new Deudaporpersona();
+                 u.setIdcontrato(rs.getString("ID_CONTRATO"));
+                 u.setApellidos(rs.getString("apellidos"));
+                 u.setNombre(rs.getString("NOMBRE"));
+                 u.setDni(rs.getString("DNI"));
+                 u.setNCelular(rs.getString("N_CELULAR"));
+                 u.setFechainicio(rs.getString("inicio"));
+                 u.setFechasalida(rs.getString("salida"));
+                 u.setNumero_habitacion(rs.getString("NUMERO_CUARTO"));
+                 u.setDeuda(rs.getString("debe"));
+                 lista.add(u);
+             }
+             conectar().close();
+        } 
+         catch (Exception e) {
+            e.printStackTrace();
+             try {
+                  conectar().close(); 
+             } catch (Exception ex) {
+               
+             }
+        }
+         return lista;
+       }
+
+
+@Override
+    public List<Persona1> buscarpersonasinprocedencia(String dni) {
+         List<Persona1> lista=new ArrayList<Persona1>();
+        Persona1 u=null;
+        Statement st=null;
+        ResultSet rs=null;
+        String query="SELECT id_persona,apellidos,nombre,dni,N_CELULAR,genero,id_ubigeo,"
+                + "to_char(FECHA_NACIMIENTO,'dd-mm-yyyy') as fecha FROM PERSONA  "
+                + "WHERE  dni='"+dni+"'";
+         try {
+            st=conectar().createStatement();
+            rs=st.executeQuery(query);
+             while (rs.next()) {
+                 u=new Persona1();
+                 u.setIdPersona(rs.getString("id_persona"));
+                 u.setApellidos(rs.getString("apellidos"));
+                 u.setNombre(rs.getString("nombre"));
+                 u.setDni(rs.getString("dni"));
+                 u.setNCelular(rs.getString("N_CELULAR"));
+                 u.setGenero(rs.getString("genero"));
+                 u.setFechaNacimiento(rs.getString("fecha"));
+                 u.setIdubigeo(rs.getString("id_ubigeo"));
                  lista.add(u);
              }
              conectar().close();
