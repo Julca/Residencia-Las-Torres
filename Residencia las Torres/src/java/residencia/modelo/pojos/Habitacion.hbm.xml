@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 19/06/2015 03:08:01 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class name="residencia.modelo.entidad.Habitacion" optimistic-lock="version" schema="LASTORRES" table="HABITACION">
+    <id name="idHabitacion" type="string">
+      <column length="60" name="ID_HABITACION"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="numeroCuarto" type="big_decimal">
+      <column name="NUMERO_CUARTO" not-null="true" precision="22" scale="0"/>
+    </property>
+    <property name="numeroPiso" type="big_decimal">
+      <column name="NUMERO_PISO" not-null="true" precision="22" scale="0"/>
+    </property>
+    <property name="totalInquilinoCuarto" type="big_decimal">
+      <column name="TOTAL_INQUILINO_CUARTO" precision="22" scale="0"/>
+    </property>
+    <property name="precioHabitacion" type="big_decimal">
+      <column name="PRECIO_HABITACION" not-null="true" precision="22" scale="0"/>
+    </property>
+  </class>
+</hibernate-mapping>
