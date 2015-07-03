@@ -1,9 +1,0 @@
-localhl<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
-<hibernate-reverse-engineering>
-  <schema-selection match-schema="LASTORRES"/>
-  <table-filter match-name="INSTITUCION"/>
-  <table-filter match-name="OCUPACION"/>
-  <table-filter match-name="TIPO_MOVIMIENTO"/>
-  <table-filter match-name="HABITACION"/>
-</hibernate-reverse-engineering>
